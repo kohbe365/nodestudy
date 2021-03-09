@@ -1,0 +1,14 @@
+{
+  "name": "bak",
+  "version": "1.0.0",
+  "description": "studybackend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "koh",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
