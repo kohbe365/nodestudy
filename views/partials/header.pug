@@ -1,0 +1,17 @@
+header.header
+    .header__column  
+        a(href=routes.home)  
+            h1 #{siteName}     
+                i.fab.fa-react ,
+                i.fab.fa-node 
+    .header__column
+        form(action=routes.search, method="get")
+            input(type="text", placeholder="Search by term...", name="term") 
+    .header__column
+        ul 
+            li 
+                a(href=routes.join) Join 
+                    i.fab.fa-react 
+            li 
+                a(href=routes.login) Log In
+                    i.fab.fa-node
