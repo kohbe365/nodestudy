@@ -7,11 +7,11 @@ import morgan from "morgan";
 import routes from "./routes";
 import helmet from "helmet";
 import userRouter from "./routers/userRouter";
-import videoRouter from "./routers/listRouter";
+import listRouter from "./routers/listRouter";
 
 const app = express();
 
-app.use(helmet());
+app.use(helmet({ contentSecurityPolicy: false }));
 app.set("view engine", "pug");
 
 // 쿠키파셀 쓰면 무한로딩 걸림 ㅡㅡ 왜이럼 app.use(cookieParser);
@@ -22,6 +22,6 @@ app.use(localsMiddleware); //전역적으로 쓸 수 있는 변수..
 
 app.use(routes.home, globalRouter);
 app.use(routes.users, userRouter);
-app.use(routes.videos, videoRouter);
+app.use(routes.lists, listRouter);
 
 export default app;

@@ -1,5 +1,13 @@
-extends layouts/main
+extends layouts/main.pug 
+include mixins/listBlock
 
-block content  
+block content 
     .search__header 
-        h3 Searching by #{searchingBy}
+        h3 Searching for : #{searchingBy}
+    .search__lists
+        each item in lists
+            +listBlock({
+                title:item.title,
+                views:item.views,
+                listFile:item.listFile
+            })

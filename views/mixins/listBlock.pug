@@ -1,0 +1,6 @@
+mixin listBlock(list={}) 
+    .listBlock
+        a(href=routes.listDetail(list.id)) 
+            video.listBlock__thumbnail(src=list.listFile, controls=true)
+            h4.listBlock__title=list.title 
+            h6.listBlock__views=list.views
