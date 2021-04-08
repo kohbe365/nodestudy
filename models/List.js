@@ -10,13 +10,13 @@ const ListSchema = new mongoose.Schema({
     required: "Title is requierd",
   },
   description: String,
-  views: {
-    type: Number,
-    defualt: 0,
+  views:{
+    type:Number,
+    default:0,
   },
   createdAt: {
     type: Date,
-    defualt: Date.now,
+    default: Date.now
   },
 });
 

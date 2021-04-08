@@ -13,6 +13,7 @@ const app = express();
 
 app.use(helmet({ contentSecurityPolicy: false }));
 app.set("view engine", "pug");
+app.use("/uploads",express.static("uploads"))
 
 // 쿠키파셀 쓰면 무한로딩 걸림 ㅡㅡ 왜이럼 app.use(cookieParser);
 app.use(bodyParser.json());

@@ -8,11 +8,12 @@ import {
   editList,
   deleteList,
 } from "../controllers/listController";
+import { uploadVideo } from "../middlewares";
 
 const listRouter = express.Router();
 
 listRouter.get(routes.upload, getUpload);
-listRouter.post(routes.upload, postUpload);
+listRouter.post(routes.upload,uploadVideo, postUpload);
 listRouter.get(routes.listDetail(), listDetail);
 listRouter.get(routes.editList, editList);
 listRouter.get(routes.deleteList, deleteList);
