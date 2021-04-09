@@ -40,13 +40,26 @@ const routes = {
   upload: UPLOAD,
   listDetail: (id) => {
     if (id) {
+      console.log(id);
       return `/lists/${id}`;
     } else {
       return LIST_DETAIL;
     }
   },
-  editList: EDIT_LIST,
-  deleteList: DELETE_LIST,
+  editList: (id) => {
+    if (id) {
+      return `/lists/${id}/edit`;
+    } else {
+      return EDIT_LIST;
+    }
+  },
+  deleteList: (id) => {
+    if (id) {
+      return `/lists/${id}/delete`;
+    } else {
+      return DELETE_LIST;
+    }
+  },
 };
 
 export default routes;

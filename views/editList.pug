@@ -1,0 +1,9 @@
+extends layouts/main.pug 
+
+block content 
+    .form-contaiter 
+        form(action=routes.editList(list.id),method="post")
+            input(type="text",placeholder="Ttle",name="title", value=list.title)
+            textarea(name="description", placeholder="Description")=list.description 
+            input(type="submit",value="Update List")
+        a.form-container__link.form-container__link--delete(href=routes.deleteList(list.id)) Delete List 
