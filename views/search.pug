@@ -5,9 +5,12 @@ block content
     .search__header 
         h3 Searching for : #{searchingBy}
     .search__lists
+        if lists.length === 0
+            h5 No Lists Found
         each item in lists
             +listBlock({
                 title:item.title,
                 views:item.views,
-                listFile:item.listFile
+                listFile:item.listFile,
+                id:item.id
             })

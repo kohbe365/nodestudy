@@ -10,14 +10,20 @@ const ListSchema = new mongoose.Schema({
     required: "Title is requierd",
   },
   description: String,
-  views:{
-    type:Number,
-    default:0,
+  views: {
+    type: Number,
+    default: 0,
   },
   createdAt: {
     type: Date,
-    default: Date.now
+    default: Date.now,
   },
+  comments: [
+    {
+      type: mongoose.Schema.Types.ObjectId, //어떤 모델과 연결을 짖는 부분.
+      ref: "Comment", //어느 모델과 연관이 되어있는지!
+    },
+  ],
 });
 
 const model = mongoose.model("List", ListSchema);

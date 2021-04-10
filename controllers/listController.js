@@ -13,10 +13,16 @@ export const home = async (req, res) => {
   }
 };
 
-export const search = (req, res) => {
+export const search = async (req, res) => {
   const {
     query: { term: searchingBy }, //req에 받아온 query안의 term 안의 값을 searchingBy에 넣는 es6문법
   } = req;
+  let lists = []; //리스트를 받아올 배열 선언.
+  try {
+    lists = await List.find({ title: { $regex: searchingBy, $options: "i" } });
+  } catch (error) {
+    console.log(error);
+  }
   res.render("search", { pageTitle: "Search", searchingBy, lists });
 };
 
