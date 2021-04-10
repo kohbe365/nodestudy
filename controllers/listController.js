@@ -3,7 +3,7 @@ import List from "../models/List";
 
 export const home = async (req, res) => {
   try {
-    const lists = await List.find({});
+    const lists = await List.find({}).sort({ _id: -1 });
     //console.log(List);//objects
     //console.log(lists);//arrays
     res.render("home", { pageTitle: "Home", lists });
